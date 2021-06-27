@@ -1,24 +1,35 @@
-import { ADD_OPERAND, ADD_ORERATOR } from "./types"
+import { SET_NUMBER, SET_OPERAND_1, SET_OPERAND_2, SET_OPERATOR } from "./types"
 
 let initialState = {
-  firstOperand: 0,
-  secondOperand: 0,
-  operator: '+'
+  operand_1: 0,
+  operand_2: 0,
+  operator: '+',
+  number: 0
 }
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_OPERAND:
+    case SET_OPERAND_1:
       return {
         ...state,
-        operand: action.payload.operand
+        operand_1: action.payload.operand_1
       }
-      case ADD_ORERATOR:
-        return {
-          ...state,
-          operand: action.payload.operator
-        }
-        default : 
-        return state
+    case SET_OPERAND_2:
+      return {
+        ...state,
+        operand_2: action.payload.operand_2
+      }
+    case SET_OPERATOR:
+      return {
+        ...state,
+        operator: action.payload.operator
+      }
+    case SET_NUMBER:
+      return {
+        ...state,
+        number: action.payload.number
+      }
+    default:
+      return state
   }
 }

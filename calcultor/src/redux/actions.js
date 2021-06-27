@@ -1,21 +1,39 @@
-import { ADD_OPERAND, ADD_ORERATOR } from "./types";
+import { SET_OPERAND_1, SET_OPERAND_2,SET_OPERATOR,SET_NUMBER } from "./types";
 
 
 
-export const addOperand = (operand) => {
+export const setOperand_1 = (operand_1) => {
   return {
-    type: ADD_OPERAND,
+    type: SET_OPERAND_1,
     payload: {
-      operand
+      operand_1
     }
   }
 }
 
-export const addOperator = (operator) => {
+export const setOperand_2 = (operand_2) => {
   return {
-    type: ADD_ORERATOR,
+    type: SET_OPERAND_2,
     payload: {
+      operand_2
+    }
+  }
+}
+
+export const setOperator = (operator)=>{
+  return {
+    type: SET_OPERATOR,
+    payload:{
       operator
+    }
+  }
+}
+
+export const setNumber=(number)=>{
+  return {
+    type: SET_NUMBER,
+    payload:{
+      number
     }
   }
 }
