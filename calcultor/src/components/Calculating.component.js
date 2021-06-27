@@ -1,5 +1,6 @@
 import connect from "react-redux";
 import {useEffect} from "react"
+import {setOperand_1, setOperator} from'../redux/actions'
 
 function Calculating(props) {
   const [operand_1, operator, operand_2] = props
@@ -19,7 +20,7 @@ function Calculating(props) {
       case '=':
         return operand_1
       case '%':
-        return operand_1 % operand_2
+        return operand_1 / 100
       default:
         return operand_1
     }
@@ -54,8 +55,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setOperator: (value) => dispatch(SetOperator(value)),
-    setOperand_1: (value) => dispatch(SetOperand_1(value))
+    setOperator: (value) => dispatch(setOperator(value)),
+    setOperand_1: (value) => dispatch(setOperand_1(value))
   }
 }
 
