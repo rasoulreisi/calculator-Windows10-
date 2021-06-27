@@ -1,6 +1,5 @@
 import connect from "react-redux";
 import {useEffect} from "react"
-import {fetchOrders} from "../../../Maktab47-Project-Rasoul-Reisi/project/src/api/api.axios";
 
 function Calculating(props) {
   const [operand_1, operator, operand_2] = props
