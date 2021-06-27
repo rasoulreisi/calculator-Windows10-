@@ -1,15 +1,17 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { setOperator } from '../redux/actions'
-class OperatorsButton extends ({ Component }) {
+import { store } from '../redux/store'
+class OperatorsButton extends Component {
 	state = {
 		style: {
 			backgroundColor: 'rgb(235, 235, 235)',
 		},
 	}
 	handleClick = (e) => {
-		const value = e.target.value
+		const value = e.target.textContent
 		this.props.setOperator(value)
+		console.log(store.getState())
 	}
 	render() {
 		return (
@@ -29,7 +31,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = () => {}
 const reduxOperatorsButton = connect(
 	mapStateToProps,
-	mapDispathToProps
+	mapDispatchToProps
 )(OperatorsButton)
 
 export { reduxOperatorsButton as OperatorsButton }

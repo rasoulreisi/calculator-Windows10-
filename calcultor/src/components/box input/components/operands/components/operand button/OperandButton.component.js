@@ -1,20 +1,23 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { setNumber } from '../redux/actions'
-class OperandsButton extends ({ Component }) {
+import { setNumber } from '../../../../../../redux/actions'
+import { store } from '../../../../../../redux/store'
+class OperandsButton extends Component {
 	state = {
 		style: {
 			backgroundColor: '#ffffff',
 		},
 	}
 	handleClick = (e) => {
-		const value = e.target.value
+		const value = +e.target.textContent
 		this.props.setNumber(value)
+		console.log(store.getState())
+		console.log(e.target.textContent)
 	}
 	render() {
 		return (
 			<button style={this.state.style} onClick={this.handleClick}>
-				{this.props.operator}
+				{this.props.operand}
 			</button>
 		)
 	}
@@ -29,7 +32,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = () => {}
 const reduxOperandsButton = connect(
 	mapStateToProps,
-	mapDispathToProps
+	mapDispatchToProps
 )(OperandsButton)
 
 export { reduxOperandsButton as OperandsButton }
