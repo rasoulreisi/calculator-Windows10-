@@ -1,8 +1,8 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { setOperator } from '../redux/actions'
-import { store } from '../redux/store'
-class OperatorsButton extends Component {
+import { setOperator } from '../../../../../../redux/actions'
+import { store } from '../../../../../../redux/store'
+class OperatorButton extends Component {
 	state = {
 		style: {
 			backgroundColor: 'rgb(235, 235, 235)',
@@ -32,6 +32,6 @@ const mapStateToProps = () => {}
 const reduxOperatorsButton = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(OperatorsButton)
+)(OperatorButton)
 
-export { reduxOperatorsButton as OperatorsButton }
+export { reduxOperatorsButton as OperatorButton }

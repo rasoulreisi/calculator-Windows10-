@@ -1,8 +1,8 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { setOperand_2, setOperator } from '../redux/actions'
-import { OperandsButton } from './box input/components/operands/components/operand button/OperandButton.component'
-import { OperatorsButton } from './OperatorsButton.component'
+import { setOperand_2, setOperator } from '../../../../redux/actions'
+import { OperandButton } from './components/operand button/OperandButton.component'
+import { OperatorButton } from './components/operator button/OperatorButton.component'
 
 class BoxInput extends Component {
 	state = {}
@@ -11,7 +11,7 @@ class BoxInput extends Component {
 		return (
 			<>
 				{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-					<OperandsButton operand={num}></OperandsButton>
+					<OperandButton operand={num}></OperandButton>
 				))}
 			</>
 		)

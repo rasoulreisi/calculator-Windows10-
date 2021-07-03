@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
-import { BoxInput } from './components/BoxInput.component'
+import { BoxInput } from './components/calculate/components/box input/BoxInput.component'
 function APP() {
 	console.log(store.getState())
 	return (

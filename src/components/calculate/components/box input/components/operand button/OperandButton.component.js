@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import { setNumber } from '../../../../../../redux/actions'
 import { store } from '../../../../../../redux/store'
-class OperandsButton extends Component {
+class OperandButton extends Component {
 	state = {
 		style: {
 			backgroundColor: '#ffffff',
@@ -33,6 +33,6 @@ const mapStateToProps = () => {}
 const reduxOperandsButton = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(OperandsButton)
+)(OperandButton)
 
-export { reduxOperandsButton as OperandsButton }
+export { reduxOperandsButton as OperandButton }
