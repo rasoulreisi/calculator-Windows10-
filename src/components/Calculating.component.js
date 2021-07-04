@@ -1,16 +1,22 @@
-import connect from "react-redux";
+import {connect} from "react-redux";
 import {useEffect} from "react"
-import {setOperand_1, setOperator} from'../redux/actions'
+import {setOperand_1, setOperator} from '../redux/actions'
+import {BoxInput} from "./calculate/components/box input/BoxInput.component";
+import {View} from "./calculate/components/view/View.component";
+
 
 function Calculating(props) {
-  const [operand_1, operator, operand_2] = props
-  const result = calculate(props)
+  const {operand_1, operator, operand_2} = props
   const calculate = (operand_1, operator, operand_2) => {
+    console.log(props)
+    let result;
     switch (operator) {
       case '+':
-        return operand_1 + operand_2
+        result = operand_1 + operand_2
+        break
       case '-':
-        return operand_1 - operand_2
+        result = operand_1 - operand_2
+        break
       case '/':
         return operand_1 / (operand_2 || 1)
       case '*':
@@ -24,22 +30,26 @@ function Calculating(props) {
       default:
         return operand_1
     }
+    props.setOperand_1(result || 0)
+    props.setOperator(operator)
+
   }
+  const didmount = () => {
+    const result = calculate(operand_1, operator, operand_2)
+    props.setOperand_1(result)
+    props.setOperator(operator)
+  }
+  const result = calculate(operand_1, operator, operand_2)
   useEffect(() => {
-    const didmount =  () => {
-      const result = calculate(operand_1, operator, operand_2)
-      props.setOperand_1(result)
-      props.setOperator(operator)
-    }
     didmount()
   }, []);
 
 
+
   return (
       <>
-        <View operand_2={}>
-          <H2>box Input</H2>
-        </View>
+        <View result={result} operand_2={operand_2} operand_1={operand_1} operator={operator}/>
+        <BoxInput/>
       </>
   )
 }

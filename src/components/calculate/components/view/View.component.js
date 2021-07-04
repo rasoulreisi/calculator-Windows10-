@@ -1,5 +1,5 @@
 function View(props) {
-  const [operand_1, operator, operand_2, result] = props
+  const {operand_1, operator, operand_2, result}= props
 
   const format = (value) => value.toLocaleString()
 

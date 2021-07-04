@@ -7,6 +7,7 @@ class OperatorButton extends Component {
 	handleClick = (e) => {
 		const value = e.target.textContent
 		this.props.setOperator(value)
+		this.props.onClick(e)
 		console.log(store.getState())
 	}
 	render() {
