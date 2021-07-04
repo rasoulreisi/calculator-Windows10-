@@ -48,7 +48,7 @@ function Calculating(props) {
 
   return (
       <>
-        <View result={result} operand_2={operand_2} operand_1={operand_1} operator={operator}/>
+        {/* <View result={result} operand_2={operand_2} operand_1={operand_1} operator={operator}/> */}
         <BoxInput/>
       </>
   )
