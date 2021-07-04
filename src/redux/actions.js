@@ -1,5 +1,14 @@
 import { SET_OPERAND_1, SET_OPERAND_2,SET_OPERATOR,SET_NUMBER } from "./types";
 
+export const toggleChange = (data) => {
+  return {
+    type: SET_OPERAND_1,
+    payload: {
+      data
+    }
+  }
+}
+
 
 
 export const setOperand_1 = (operand_1) => {

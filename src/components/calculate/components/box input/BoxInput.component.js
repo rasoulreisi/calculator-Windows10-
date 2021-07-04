@@ -1,8 +1,8 @@
-import { Component } from 'react'
-import { connect } from 'react-redux'
-import { setOperand_2, setOperator } from '../../../../redux/actions'
-import { OperandButton } from './components/operand button/OperandButton.component'
-import { OperatorButton } from './components/operator button/OperatorButton.component'
+import {Component} from 'react'
+import {connect} from 'react-redux'
+import {setOperand_2, setOperator,toggleChange} from '../../../../redux/actions'
+import {OperandButton} from './components/operand button/OperandButton.component'
+import {OperatorButton} from './components/operator button/OperatorButton.component'
 import styles from './BoxInput.module.css'
 import { View } from '../view/View.component'
 
@@ -19,6 +19,8 @@ class BoxInput extends Component {
         await this.props.setOperand_2(+this.state.operand_2)
         await this.props.setOperator(key)
         this.setState({ operand_2: '0' })
+        await this.props.toggleChange(true)
+
       }
       else if (typeof +key == 'number') {
         const operand = +(this.state.operand_2 + key)
@@ -65,6 +67,7 @@ const mapStateToProps = (state) => {
     operand_1: state.operand_1,
     operand_2: state.operand_2,
     operator: state.operator,
+    changeInput:state.changeInput
   }
 }
 
@@ -72,6 +75,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setOperator: (value) => dispatch(setOperator(value)),
     setOperand_2: (value) => dispatch(setOperand_2(value)),
+    toggleChange: value => dispatch(toggleChange(value))
   }
 }
 

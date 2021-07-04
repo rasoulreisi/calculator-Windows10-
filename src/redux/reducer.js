@@ -1,10 +1,11 @@
-import { SET_NUMBER, SET_OPERAND_1, SET_OPERAND_2, SET_OPERATOR } from "./types"
+import { SET_NUMBER, SET_OPERAND_1, SET_OPERAND_2, SET_OPERATOR,TOGGLE_CHANGE } from "./types"
 
 let initialState = {
   operand_1: 0,
   operand_2: 0,
   operator: '+',
-  number: 0
+  number: 0,
+  changeInput: false,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -25,6 +26,11 @@ export const reducer = (state = initialState, action) => {
         operator: action.payload.operator
       }
     case SET_NUMBER:
+      return {
+        ...state,
+        number: action.payload.number
+      }
+    case TOGGLE_CHANGE:
       return {
         ...state,
         number: action.payload.number
