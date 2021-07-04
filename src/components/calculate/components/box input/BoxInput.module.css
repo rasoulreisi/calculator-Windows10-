@@ -1,29 +1,56 @@
-.operand{
-	width: 70%;
+.box {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
-	/* background-color: #ccc; */
+	background-color: #d4d4d4;
+	text-align: right;
 }
 
-.right{
+.top {
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.topBtnWrapper{
+	width: 25%;
+}
+
+.topBtnWrapper,.operandsBtnWrapper,.rightsBtnWrapper{
+	box-sizing: border-box;
+	padding: 1px;
+}
+
+button{
+	width: 100%;
+}
+
+.operandsBtnWrapper{
+	width: calc(100%/3);
+}
+.operandsBtnWrapper>Button{
+	font-weight: bold;
+}
+
+.view{
+	width: 100%;
+	padding-right: 5px;
+}
+
+.operand {
+	box-sizing: border-box;
+	width: 75%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.right {
+	box-sizing: border-box;
+	width: 25%;
+	display: flex;
 	flex-direction: column;
-	width: 30%;
-	align-items: center;
-}
-
-.container{
-	width: 340px;
-	display: flex;
-	flex-wrap: wrap;
-	background-color: #ccc;
-	justify-content: center;
-}
-
-.top{
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
 }

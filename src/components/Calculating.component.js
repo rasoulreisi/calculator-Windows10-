@@ -1,8 +1,7 @@
-import {connect} from "react-redux";
-import {useEffect ,useState} from "react"
-import {setOperand_1, setOperator,toggleChange} from '../redux/actions'
-import {BoxInput} from "./calculate/components/box input/BoxInput.component";
-import {View} from "./calculate/components/view/View.component";
+import { connect } from "react-redux";
+import { useEffect ,useState } from "react"
+import { setOperand_1, setOperator,toggleChange } from '../redux/actions'
+import { BoxInput } from "./calculate/components/box input/BoxInput.component"
 
 
 function Calculating(props) {
@@ -55,10 +54,7 @@ function Calculating(props) {
 
 
   return (
-      <>
-        {/* <View result={result} operand_2={operand_2} operand_1={operand_1} operator={operator}/> */}
-        <BoxInput/>
-      </>
+      <BoxInput result={result} operand_2={operand_2} operand_1={operand_1} operator={operator}/>
   )
 }
 

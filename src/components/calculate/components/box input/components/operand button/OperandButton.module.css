@@ -2,10 +2,8 @@
 	background-color: white;
 	text-align: center;
 	height: 45px;
-	width: 70px;
-	margin: 2px;
 	border: none;
 }
 .operand:hover {
-	background-color: rgb(138, 223, 223);
+	background-color: #afafaf;
 }
