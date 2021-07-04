@@ -1,0 +1,11 @@
+.operator {
+	background-color: rgb(231, 231, 231);
+	text-align: center;
+	height: 45px;
+	width: 70px;
+	margin: 2px;
+	border: none;
+}
+.operator:hover {
+	background-color: rgb(138, 223, 223);
+}

@@ -1,0 +1,35 @@
+.top {
+	width: 296px;
+	background-color: grey;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2px;
+}
+
+.operand {
+	width: 222px;
+	background-color: grey;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2px;
+	margin-top: -4px;
+	display: inline-block;
+}
+
+.right {
+	padding: 2px;
+	background-color: grey;
+	width: 74px;
+	display: flex;
+	flex-direction: column;
+	margin-top: -4px;
+	margin-left: -4px;
+	display: inline-block;
+}
+
+.box {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}

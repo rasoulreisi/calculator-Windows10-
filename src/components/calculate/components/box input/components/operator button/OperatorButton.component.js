@@ -2,12 +2,8 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import { setOperator } from '../../../../../../redux/actions'
 import { store } from '../../../../../../redux/store'
+import styles from './OperatorButton.module.css'
 class OperatorButton extends Component {
-	state = {
-		style: {
-			backgroundColor: 'rgb(235, 235, 235)',
-		},
-	}
 	handleClick = (e) => {
 		const value = e.target.textContent
 		this.props.setOperator(value)
@@ -15,7 +11,7 @@ class OperatorButton extends Component {
 	}
 	render() {
 		return (
-			<button style={this.state.style} onClick={this.handleClick}>
+			<button className={styles.operator} onClick={this.handleClick}>
 				{this.props.operator}
 			</button>
 		)

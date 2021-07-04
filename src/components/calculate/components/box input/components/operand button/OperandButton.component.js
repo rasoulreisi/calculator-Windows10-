@@ -2,12 +2,8 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import { setNumber } from '../../../../../../redux/actions'
 import { store } from '../../../../../../redux/store'
+import styles from './OperandButton.module.css'
 class OperandButton extends Component {
-	state = {
-		style: {
-			backgroundColor: '#ffffff',
-		},
-	}
 	handleClick = (e) => {
 		const value = +e.target.textContent
 		this.props.setNumber(value)
@@ -16,7 +12,7 @@ class OperandButton extends Component {
 	}
 	render() {
 		return (
-			<button style={this.state.style} onClick={this.handleClick}>
+			<button className={styles.operand} onClick={this.handleClick}>
 				{this.props.operand}
 			</button>
 		)
